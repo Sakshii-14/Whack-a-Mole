@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(255, 208, 0);
+}
+.container{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(255, 208, 0);
+    font-family: cursive;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    padding: 4rem;
+    justify-content: center;
+    align-items: center;
+    
+}
+h1{
+    font-size: 3rem;
+}
+#score{
+    margin: 2rem;
+}
+.holes{
+    width: 60%;
+    height: 60%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+    gap: 1rem;
+    
+}
+#score{
+    background-color: rgb(0, 0, 0,0.05);
+    padding: 5px 25px;
+}
+.hole{    
+    overflow: hidden;
+    position: relative;
+   
+}
+.hole::after{
+    content: '';
+    display: block;
+    background: url("dirt.png") no-repeat ;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 55%;
+    z-index: 2;
+}
+.mole{
+    background: url("mole.png") no-repeat center;
+    background-size: contain;
+    position: absolute;
+    top: 100%;
+    height: 100%;
+    width: 100%;
+    mix-blend-mode: multiply;
+    transition: all 0.4s ease-in-out;
+}
+.hole.up .mole{
+    top: 10%;
+}
+button{
+    padding: 1rem;
+    background-color: brown;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: 550;
+}
+button:hover{
+    background-color: rgb(227, 18, 18);
+    color: rgb(255, 200, 0) ;
+    transition: all 0.4s;
+    box-shadow: 0 0 10px rgba(201, 43, 43, 0.834)
+}
